@@ -166,3 +166,9 @@ import './misc/font-test';
 import './misc/keyboard-tester';
 import './misc/screen-ruler';
 import './misc/countdown';
+
+// === Dev & Design Tools Expansion ===
+import './developer/wcag-contrast';
+import './developer/minify';
+import './developer/eyedropper';
+import './crypto/jwt-debug';
