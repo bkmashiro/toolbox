@@ -1,0 +1,55 @@
+.ruler-container {
+  position: relative;
+  user-select: none;
+  padding: var(--space-4);
+}
+
+.ruler {
+  position: relative;
+  height: 60px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 9px,
+    var(--color-border) 9px,
+    var(--color-border) 10px
+  );
+  background-color: var(--color-surface2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: col-resize;
+}
+
+.ruler-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-accent);
+  cursor: col-resize;
+}
+
+.ruler-handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.ruler-measurement {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  pointer-events: none;
+  white-space: nowrap;
+}
