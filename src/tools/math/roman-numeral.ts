@@ -44,9 +44,6 @@ export function fromRoman(s: string): number {
   return result;
 }
 
-function isRoman(s: string): boolean {
-  return /^[MDCLXVImdclxvi]+$/.test(s.trim());
-}
 
 const tool: Tool = {
   id: 'roman-numeral',

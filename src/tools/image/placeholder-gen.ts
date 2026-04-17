@@ -60,7 +60,7 @@ const tool: Tool = {
   },
   apiSupported: true,
 
-  async run(inputs, options) {
+  async run(_inputs, options) {
     const w = Math.max(1, options['width'] as number);
     const h = Math.max(1, options['height'] as number);
     const bgColor = options['bgColor'] as string;

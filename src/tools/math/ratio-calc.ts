@@ -8,9 +8,6 @@ function gcd(a: number, b: number): number {
   return a;
 }
 
-function lcm(a: number, b: number): number {
-  return Math.abs(a * b) / gcd(a, b);
-}
 
 const tool: Tool = {
   id: 'ratio-calc',

@@ -24,7 +24,7 @@ const tool: Tool = {
   output: { type: 'html' },
   apiSupported: false,
 
-  async run(inputs, options) {
+  async run(_inputs, options) {
     const unit = options.unit as string;
 
     const html = `

@@ -110,7 +110,7 @@ const tool: Tool = {
   output: { type: 'html' },
   apiSupported: false,
 
-  async run(inputs, options) {
+  async run(_inputs, options) {
     const customFont = (options.customFont as string).trim();
     const fontFamily = customFont || (options.fontFamily as string);
     const testText = (options.testText as string) || 'The quick brown fox jumps over the lazy dog';

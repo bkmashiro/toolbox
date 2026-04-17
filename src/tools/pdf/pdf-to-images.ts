@@ -109,7 +109,7 @@ const tool: Tool = {
 
     return {
       type: 'file',
-      data: new Blob([zip], { type: 'application/zip' }),
+      data: new Blob([zip.buffer as ArrayBuffer], { type: 'application/zip' }),
       filename: `${baseName}-images.zip`,
       mimeType: 'application/zip',
       summary: `Rendered ${pageIndices.length} pages at ${dpi} DPI as ${format.toUpperCase()}`,

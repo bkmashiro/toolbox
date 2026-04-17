@@ -1,5 +1,6 @@
 import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
+import { bufToBase64 } from './crypto-utils';
 
 const tool: Tool = {
   id: 'pgp-encrypt',
@@ -69,12 +70,14 @@ const tool: Tool = {
       if (!keyStr) throw new Error('Public key is required for encryption');
       const publicKey = await openpgp.readKey({ armoredKey: keyStr });
       const message = await openpgp.createMessage({ text });
-      const encrypted = await openpgp.encrypt({
-        message,
-        encryptionKeys: publicKey,
-        format: armor ? 'armored' : 'binary',
-      });
-      return { type: 'text', data: encrypted as string };
+      let encryptedData: string;
+      if (armor) {
+        encryptedData = await openpgp.encrypt({ message, encryptionKeys: publicKey, format: 'armored' }) as unknown as string;
+      } else {
+        const bin = await openpgp.encrypt({ message, encryptionKeys: publicKey, format: 'binary' }) as unknown as Uint8Array;
+        encryptedData = bufToBase64(bin);
+      }
+      return { type: 'text', data: encryptedData };
     }
 
     if (mode === 'decrypt') {
@@ -98,12 +101,14 @@ const tool: Tool = {
         privateKey = await openpgp.decryptKey({ privateKey, passphrase });
       }
       const message = await openpgp.createMessage({ text });
-      const signed = await openpgp.sign({
-        message,
-        signingKeys: privateKey,
-        format: armor ? 'armored' : 'binary',
-      });
-      return { type: 'text', data: signed as string };
+      let signedData: string;
+      if (armor) {
+        signedData = await openpgp.sign({ message, signingKeys: privateKey, format: 'armored' }) as unknown as string;
+      } else {
+        const bin = await openpgp.sign({ message, signingKeys: privateKey, format: 'binary' }) as unknown as Uint8Array;
+        signedData = bufToBase64(bin);
+      }
+      return { type: 'text', data: signedData };
     }
 
     if (mode === 'verify') {
@@ -113,8 +118,9 @@ const tool: Tool = {
         const msg = await openpgp.readMessage({ armoredMessage: text });
         return msg;
       });
+      type CleartextMessage = Awaited<ReturnType<typeof openpgp.readCleartextMessage>>;
       const { signatures } = await openpgp.verify({
-        message: message as openpgp.CleartextMessage,
+        message: message as CleartextMessage,
         verificationKeys: publicKey,
       });
       const valid = await signatures[0]?.verified;

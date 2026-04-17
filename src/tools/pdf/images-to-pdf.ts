@@ -84,7 +84,7 @@ const tool: Tool = {
     const orientation = options['orientation'] as string;
     const margin = options['margin'] as number;
 
-    const { PDFDocument, rgb } = await import('pdf-lib');
+    const { PDFDocument } = await import('pdf-lib');
     const doc = await PDFDocument.create();
 
     for (let i = 0; i < files.length; i++) {

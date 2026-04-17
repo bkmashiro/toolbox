@@ -1,6 +1,6 @@
 import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
-import { loadPDFLib, parsePageRange, savePDFLib } from './pdf-utils';
+import { loadPDFLib, parsePageRange } from './pdf-utils';
 
 const tool: Tool = {
   id: 'pdf-split',
@@ -82,7 +82,7 @@ const tool: Tool = {
 
     return {
       type: 'file',
-      data: new Blob([zip], { type: 'application/zip' }),
+      data: new Blob([zip.buffer as ArrayBuffer], { type: 'application/zip' }),
       filename: `${baseName}-split.zip`,
       mimeType: 'application/zip',
       summary: `Split into ${splitGroups.length} PDFs`,

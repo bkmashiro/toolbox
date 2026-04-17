@@ -2,7 +2,7 @@ import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
 import { hexEncode, hexDecode, bufToBase64, base64ToBuf, strToBytes, bytesToStr } from './crypto-utils';
 
-function pemToBytes(pem: string): Uint8Array {
+function pemToBytes(pem: string): Uint8Array<ArrayBuffer> {
   const b64 = pem
     .replace(/-----[^-]+-----/g, '')
     .replace(/\s+/g, '');
@@ -106,7 +106,7 @@ const tool: Tool = {
       const encoded = outputFormat === 'base64' ? bufToBase64(ciphertext) : hexEncode(ciphertext);
       return { type: 'text', data: encoded };
     } else {
-      let cipherbytes: Uint8Array;
+      let cipherbytes: Uint8Array<ArrayBuffer>;
       try {
         cipherbytes = outputFormat === 'base64' ? base64ToBuf(text) : hexDecode(text);
       } catch {

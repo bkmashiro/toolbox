@@ -12,7 +12,6 @@ function parseExif(buffer: ArrayBuffer): Record<string, string> {
     const marker = view.getUint16(offset);
     if (marker === 0xFFE1) {
       // Found APP1
-      const segLen = view.getUint16(offset + 2);
       const exifHeader = String.fromCharCode(
         view.getUint8(offset + 4),
         view.getUint8(offset + 5),

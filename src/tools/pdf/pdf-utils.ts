@@ -69,5 +69,5 @@ export async function renderPageToCanvas(
  */
 export async function savePDFLib(doc: import('pdf-lib').PDFDocument): Promise<Blob> {
   const bytes = await doc.save();
-  return new Blob([bytes], { type: 'application/pdf' });
+  return new Blob([bytes.buffer as ArrayBuffer], { type: 'application/pdf' });
 }

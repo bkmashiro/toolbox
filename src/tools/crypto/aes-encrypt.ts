@@ -2,7 +2,7 @@ import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
 import { hexEncode, hexDecode, bufToBase64, base64ToBuf, strToBytes, bytesToStr } from './crypto-utils';
 
-async function deriveKey(password: string, salt: Uint8Array): Promise<CryptoKey> {
+async function deriveKey(password: string, salt: Uint8Array<ArrayBuffer>): Promise<CryptoKey> {
   const subtle = globalThis.crypto.subtle;
   const keyMaterial = await subtle.importKey('raw', strToBytes(password), 'PBKDF2', false, ['deriveKey']);
   return subtle.deriveKey(
@@ -71,8 +71,8 @@ const tool: Tool = {
     const subtle = globalThis.crypto.subtle;
 
     if (mode === 'encrypt') {
-      const salt = globalThis.crypto.getRandomValues(new Uint8Array(16));
-      const iv = globalThis.crypto.getRandomValues(new Uint8Array(12));
+      const salt = globalThis.crypto.getRandomValues(new Uint8Array(new ArrayBuffer(16)));
+      const iv = globalThis.crypto.getRandomValues(new Uint8Array(new ArrayBuffer(12)));
       const key = await deriveKey(password, salt);
       const ciphertext = await subtle.encrypt({ name: 'AES-GCM', iv }, key, strToBytes(text));
 
@@ -104,7 +104,7 @@ const tool: Tool = {
       const key = await deriveKey(password, salt);
       let plaintext: ArrayBuffer;
       try {
-        plaintext = await subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
+        plaintext = await subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext.buffer as ArrayBuffer);
       } catch {
         throw new Error('Decryption failed — wrong password or corrupted data');
       }

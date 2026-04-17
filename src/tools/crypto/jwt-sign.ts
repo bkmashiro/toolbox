@@ -11,7 +11,7 @@ function base64UrlEncodeStr(str: string): string {
   return base64UrlEncode(bytes);
 }
 
-function pemToBytes(pem: string): Uint8Array {
+function pemToBytes(pem: string): Uint8Array<ArrayBuffer> {
   const b64 = pem.replace(/-----[^-]+-----/g, '').replace(/\s+/g, '');
   return base64ToBuf(b64);
 }

@@ -60,7 +60,7 @@ const tool: Tool = {
   output: { type: 'html' },
   apiSupported: false,
 
-  async run(inputs, options) {
+  async run(_inputs, options) {
     const mode = options.mode as string;
     const totalSecs = mode === 'countdown'
       ? (options.hours as number) * 3600 + (options.minutes as number) * 60 + (options.seconds as number)
