@@ -166,3 +166,8 @@ import './misc/font-test';
 import './misc/keyboard-tester';
 import './misc/screen-ruler';
 import './misc/countdown';
+
+// === AI Tools Expansion ===
+import './image/bg-remove';
+import './image/ocr';
+import './image/image-upscale';
