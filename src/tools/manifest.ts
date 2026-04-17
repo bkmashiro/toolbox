@@ -171,3 +171,10 @@ import './misc/countdown';
 import './image/bg-remove';
 import './image/ocr';
 import './image/image-upscale';
+// === Archive & Spreadsheet Expansion ===
+import './data/zip-create';
+import './data/zip-extract';
+import './data/xlsx-to-json';
+import './data/xlsx-to-csv';
+import './data/json-to-xlsx';
+import './data/csv-to-xlsx';
