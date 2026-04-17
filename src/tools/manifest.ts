@@ -183,3 +183,10 @@ import './developer/wcag-contrast';
 import './developer/minify';
 import './developer/eyedropper';
 import './crypto/jwt-debug';
+// === Misc Tools Expansion ===
+import './misc/tts';
+import './misc/stt';
+import './misc/pomodoro';
+import './math/num-to-words';
+import './text/string-similarity';
+import './text/word-freq';
