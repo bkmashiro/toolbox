@@ -58,33 +58,41 @@ import './pdf/pdf-page-numbers';
 import './pdf/pdf-protect';
 
 // === Data/Text tools (Agent 3) ===
-// import './data/json-format';
-// import './data/json-to-yaml';
-// import './data/yaml-to-json';
-// import './data/json-to-toml';
-// import './data/toml-to-json';
-// import './data/csv-to-json';
-// import './data/json-to-csv';
-// import './data/xml-to-json';
-// import './data/json-to-xml';
-// import './data/json-query';
-// import './data/csv-viewer';
-// import './data/sql-format';
-// import './data/protobuf-decode';
-// import './text/base64';
-// import './text/url-encode';
-// import './text/html-encode';
-// import './text/case-convert';
-// import './text/text-diff';
-// import './text/markdown-preview';
-// import './text/html-to-markdown';
-// import './text/regex-tester';
-// import './text/text-stats';
-// import './text/text-sort';
-// import './text/lorem-ipsum';
-// import './text/unicode-inspect';
-// import './text/string-escape';
-// import './text/line-tools';
+import './data/json-format';
+import './data/json-to-yaml';
+import './data/yaml-to-json';
+import './data/json-to-toml';
+import './data/toml-to-json';
+import './data/yaml-to-toml';
+import './data/csv-to-json';
+import './data/json-to-csv';
+import './data/xml-to-json';
+import './data/json-to-xml';
+import './data/xml-format';
+import './data/csv-viewer';
+import './data/sql-format';
+import './data/protobuf-to-json';
+import './data/json-schema';
+import './data/json-to-ts';
+import './data/markdown-to-html';
+import './data/html-to-markdown';
+// import './data/json-query';   // stub from scaffold, not yet implemented by Agent 3
+import './text/case-convert';
+import './text/diff-text';
+import './text/text-diff-words';
+import './text/regex-test';
+import './text/text-count';
+import './text/text-stats';
+import './text/line-tools';
+import './text/lorem-ipsum';
+import './text/text-escape';
+import './text/morse-code';
+import './text/binary-text';
+import './text/find-replace';
+// import './text/base64';        // stub from scaffold
+// import './text/url-encode';    // stub from scaffold
+// import './text/html-encode';   // stub from scaffold
+// import './text/unicode-inspect'; // stub from scaffold
 
 // === Crypto/Network/Developer tools (Agent 4) ===
 // import './crypto/hash';
