@@ -2,11 +2,9 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   define: {
-    // Some npm libraries (xlsx, tesseract.js, etc.) reference Node's `process`
-    // Polyfill it so they don't crash in the browser
-    'process.env.NODE_ENV': JSON.stringify('production'),
-    'process.env': '{}',
-    'process.browser': 'true',
+    // Polyfill Node.js globals for browser-targeting libraries (xlsx, tesseract.js, etc.)
+    'process': JSON.stringify({ env: { NODE_ENV: 'production' }, browser: true, version: '', versions: {}, platform: 'browser' }),
+    'global': 'globalThis',
   },
   server: {
     headers: {
