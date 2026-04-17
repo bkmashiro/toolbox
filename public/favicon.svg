@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Box -->
+  <rect x="8" y="24" width="48" height="32" rx="4" fill="#228be6" opacity="0.15"/>
+  <rect x="8" y="24" width="48" height="32" rx="4" stroke="#228be6" stroke-width="3" fill="none"/>
+  <!-- Box lid -->
+  <rect x="4" y="18" width="56" height="10" rx="3" fill="#228be6"/>
+  <!-- Wrench -->
+  <g transform="translate(20, 28) rotate(-30, 12, 12)">
+    <rect x="10" y="2" width="4" height="20" rx="2" fill="#ffffff"/>
+    <circle cx="12" cy="4" r="5" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="12" cy="22" r="4" fill="#ffffff"/>
+  </g>
+</svg>
