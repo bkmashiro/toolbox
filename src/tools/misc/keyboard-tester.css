@@ -1,0 +1,61 @@
+.keyboard-display {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-family-mono);
+}
+
+.keyboard-key-badge {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-6);
+  min-width: 80px;
+}
+
+.keyboard-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  width: 100%;
+  max-width: 480px;
+}
+
+.keyboard-info-item {
+  background: var(--color-surface2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.keyboard-info-label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.keyboard-modifiers {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mod-badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.mod-active { background: var(--color-success-light); color: var(--color-success); }
+.mod-inactive { background: var(--color-surface3); color: var(--color-text-muted); }
