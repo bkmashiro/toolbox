@@ -26,29 +26,36 @@ import './audio/audio-speed'
 import './audio/audio-id3'
 
 // === Image/PDF tools (Agent 2) ===
-// import './image/image-convert';
-// import './image/image-compress';
-// import './image/image-resize';
-// import './image/image-crop';
-// import './image/image-rotate-flip';
-// import './image/image-exif';
-// import './image/image-to-base64';
-// import './image/base64-to-image';
-// import './image/favicon-gen';
-// import './image/svg-optimize';
-// import './image/qr-generate';
-// import './image/qr-decode';
-// import './image/barcode-generate';
-// import './image/barcode-decode';
-// import './pdf/pdf-merge';
-// import './pdf/pdf-split';
-// import './pdf/pdf-compress';
-// import './pdf/pdf-to-images';
-// import './pdf/pdf-extract-text';
-// import './pdf/pdf-add-watermark';
-// import './pdf/pdf-protect';
-// import './pdf/pdf-rotate';
-// import './pdf/pdf-reorder';
+import './image/image-convert';
+import './image/image-compress';
+import './image/image-resize';
+import './image/image-rotate-flip';
+import './image/image-crop';
+import './image/image-exif';
+import './image/image-to-base64';
+import './image/base64-to-image';
+import './image/favicon-gen';
+import './image/svg-optimize';
+import './image/qr-generate';
+import './image/qr-decode';
+import './image/barcode-generate';
+import './image/color-pick';
+import './image/palette-extract';
+import './image/placeholder-gen';
+import './image/image-diff';
+import './image/sprite-sheet';
+import './pdf/pdf-merge';
+import './pdf/pdf-split';
+import './pdf/pdf-extract-pages';
+import './pdf/pdf-compress';
+import './pdf/pdf-to-images';
+import './pdf/images-to-pdf';
+import './pdf/pdf-rotate';
+import './pdf/pdf-extract-text';
+import './pdf/pdf-metadata';
+import './pdf/pdf-watermark';
+import './pdf/pdf-page-numbers';
+import './pdf/pdf-protect';
 
 // === Data/Text tools (Agent 3) ===
 // import './data/json-format';
