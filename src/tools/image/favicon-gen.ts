@@ -85,7 +85,7 @@ const tool: Tool = {
 
     return {
       type: 'file',
-      data: new Blob([zip], { type: 'application/zip' }),
+      data: new Blob([zip.buffer as ArrayBuffer], { type: 'application/zip' }),
       filename: 'favicons.zip',
       mimeType: 'application/zip',
       summary: `Generated ${Object.keys(files).length} files (${selectedSizes.length} PNGs${icoSizes.length > 0 ? ' + ICO' : ''})`,

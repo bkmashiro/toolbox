@@ -110,7 +110,7 @@ const tool: Tool = {
   output: { type: 'file', defaultFilename: 'vcard-qr.png', defaultMimeType: 'image/png' },
   apiSupported: false,
 
-  async run(inputs, options) {
+  async run(_inputs, options) {
     const QRCode = (await import('qrcode')).default;
 
     const vcard = buildVCard({

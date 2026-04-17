@@ -1,6 +1,5 @@
 import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
-import { savePDFLib } from './pdf-utils';
 
 const tool: Tool = {
   id: 'pdf-compress',
@@ -25,7 +24,7 @@ const tool: Tool = {
   heavyDeps: ['pdf-lib'],
   apiSupported: false,
 
-  async run(inputs, options, onProgress) {
+  async run(inputs, _options, onProgress) {
     const file = inputs['pdf'] as File;
 
     onProgress?.(10, 'Loading PDF...');
@@ -43,7 +42,7 @@ const tool: Tool = {
 
     onProgress?.(70, 'Saving with compression...');
     const bytes = await doc.save({ useObjectStreams: true, addDefaultPage: false });
-    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const blob = new Blob([bytes.buffer as ArrayBuffer], { type: 'application/pdf' });
 
     const origKB = (file.size / 1024).toFixed(1);
     const newKB = (bytes.byteLength / 1024).toFixed(1);

@@ -1,6 +1,6 @@
 import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
-import { hexEncode, base64ToBuf, bufToBase64 } from './crypto-utils';
+import { hexEncode, base64ToBuf } from './crypto-utils';
 
 // Minimal ASN.1 DER decoder for X.509 certificates
 function readLength(data: Uint8Array, offset: number): { length: number; nextOffset: number } {
@@ -74,7 +74,7 @@ function decodeTime(data: Uint8Array, tag: number): string {
   return `${str.slice(0, 4)}-${str.slice(4, 6)}-${str.slice(6, 8)}T${str.slice(8, 10)}:${str.slice(10, 12)}:${str.slice(12, 14)}Z`;
 }
 
-async function parseCert(der: Uint8Array) {
+async function parseCert(der: Uint8Array<ArrayBuffer>) {
   const subtle = globalThis.crypto.subtle;
   const sha256 = await subtle.digest('SHA-256', der);
   const sha1 = await subtle.digest('SHA-1', der);

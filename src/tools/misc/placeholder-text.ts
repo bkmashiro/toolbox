@@ -41,7 +41,7 @@ const tool: Tool = {
   output: { type: 'text' },
   apiSupported: false,
 
-  async run(inputs, options) {
+  async run(_inputs, options) {
     const style = options.style as string;
     const unit = options.unit as 'paragraphs' | 'sentences' | 'words';
     const count = options.count as number;

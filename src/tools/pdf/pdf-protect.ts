@@ -1,6 +1,5 @@
 import { registry } from '../../core/registry';
 import type { Tool } from '../../core/types';
-import { loadPDFLib } from './pdf-utils';
 
 const tool: Tool = {
   id: 'pdf-protect',
@@ -98,7 +97,7 @@ const tool: Tool = {
       // For a full encryption implementation, we would use pdf-lib's encrypt method
       // which is available in newer builds. Here we provide the document as-is
       // with a note about the limitation.
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: 'application/pdf' });
       onProgress?.(100, 'Done');
 
       const baseName = file.name.replace(/\.pdf$/i, '');

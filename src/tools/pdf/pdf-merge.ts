@@ -25,7 +25,7 @@ const tool: Tool = {
   heavyDeps: ['pdf-lib'],
   apiSupported: false,
 
-  async run(inputs, options, onProgress) {
+  async run(inputs, _options, onProgress) {
     const files = inputs['pdfs'] as File[];
     if (files.length < 2) throw new Error('Please provide at least 2 PDF files');
 

@@ -63,6 +63,10 @@ export interface ToolOption {
   advanced?: boolean;
   /** Conditional visibility: only show this option when another option has a specific value */
   showWhen?: { optionId: string; value: unknown };
+  /** Whether this option is required (for text/textarea options). Default: true */
+  required?: boolean;
+  /** For textarea type: number of visible rows */
+  rows?: number;
 }
 
 /**

@@ -63,8 +63,8 @@ const tool: Tool = {
   apiSupported: false,
   heavyDeps: ['faker'],
 
-  async run(inputs, options) {
-    const { faker } = await import('@faker-js/faker') as any;
+  async run(_inputs, options) {
+    const { faker } = await import('faker-js') as any;
 
     const category = options.category as string;
     const count = options.count as number;

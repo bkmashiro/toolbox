@@ -70,9 +70,11 @@ const tool: Tool = {
     const tabWidth = indentOpt === 'tab' ? 1 : parseInt(indentOpt, 10);
     const useTabs = indentOpt === 'tab';
 
+    type FormatOptions = NonNullable<Parameters<typeof format>[1]>;
+    type SqlLanguage = FormatOptions extends { language?: infer L } ? L : never;
     try {
       const result = format(sql, {
-        language: dialect as Parameters<typeof format>[1] extends { language?: infer L } ? L : string,
+        language: dialect as SqlLanguage,
         tabWidth,
         useTabs,
         keywordCase: uppercase ? 'upper' : 'preserve',
