@@ -1,0 +1,85 @@
+.csv-viewer-container {
+  overflow: auto;
+  max-height: 500px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+}
+
+.csv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-family: var(--font-mono, monospace);
+}
+
+.csv-table th {
+  background: var(--bg-header, #f8fafc);
+  color: var(--text-primary, #1e293b);
+  font-weight: 600;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--border-color, #e2e8f0);
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.csv-table th:hover {
+  background: var(--bg-header-hover, #f1f5f9);
+}
+
+.csv-table th .sort-indicator {
+  margin-left: 4px;
+  opacity: 0.5;
+  font-size: 0.75rem;
+}
+
+.csv-table th.sorted-asc .sort-indicator::after {
+  content: '▲';
+  opacity: 1;
+}
+
+.csv-table th.sorted-desc .sort-indicator::after {
+  content: '▼';
+  opacity: 1;
+}
+
+.csv-table th:not(.sorted-asc):not(.sorted-desc) .sort-indicator::after {
+  content: '⇅';
+}
+
+.csv-table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-primary, #1e293b);
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.csv-table tr:last-child td {
+  border-bottom: none;
+}
+
+.csv-table tbody tr:hover td {
+  background: var(--bg-row-hover, #f8fafc);
+}
+
+.csv-table tbody tr:nth-child(even) td {
+  background: var(--bg-row-even, #fafafa);
+}
+
+.csv-table tbody tr:nth-child(even):hover td {
+  background: var(--bg-row-hover, #f8fafc);
+}
+
+.csv-viewer-meta {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #64748b);
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  background: var(--bg-meta, #f8fafc);
+}
