@@ -178,3 +178,8 @@ import './data/xlsx-to-json';
 import './data/xlsx-to-csv';
 import './data/json-to-xlsx';
 import './data/csv-to-xlsx';
+// === Dev & Design Tools Expansion ===
+import './developer/wcag-contrast';
+import './developer/minify';
+import './developer/eyedropper';
+import './crypto/jwt-debug';
