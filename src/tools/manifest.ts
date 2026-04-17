@@ -109,15 +109,29 @@
 // import './developer/jwt-sign';
 
 // === Math/Misc tools (Agent 5) ===
-// import './math/calculator';
-// import './math/matrix';
-// import './math/stats';
-// import './math/unit-convert';
-// import './math/roman-numeral';
-// import './math/prime';
-// import './misc/zip-create';
-// import './misc/zip-extract';
-// import './misc/file-hash';
-// import './misc/font-preview';
-// import './misc/color-picker';
-// import './misc/stopwatch';
+// Math tools
+import './math/unit-convert';
+import './math/number-format';
+import './math/percentage-calc';
+import './math/statistics';
+import './math/roman-numeral';
+import './math/matrix-calc';
+import './math/date-calc';
+import './math/age-calc';
+import './math/timezone-convert';
+import './math/ratio-calc';
+
+// Misc tools
+import './misc/fake-data';
+import './misc/placeholder-text';
+import './misc/emoji-search';
+import './misc/unicode-lookup';
+import './misc/ascii-table';
+import './misc/random-gen';
+import './misc/qr-vcard';
+import './misc/file-hash';
+import './misc/color-palette';
+import './misc/font-test';
+import './misc/keyboard-tester';
+import './misc/screen-ruler';
+import './misc/countdown';
