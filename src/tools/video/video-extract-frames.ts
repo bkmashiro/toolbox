@@ -125,7 +125,7 @@ const tool: Tool = {
     }
 
     const zipped = zipSync(files)
-    const blob = new Blob([zipped], { type: 'application/zip' })
+    const blob = new Blob([zipped.buffer as ArrayBuffer], { type: 'application/zip' })
 
     await cleanupFiles(ffmpeg, [inputName, ...fileList])
 

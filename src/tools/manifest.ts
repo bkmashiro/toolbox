@@ -2,28 +2,28 @@
 // Agent 0 (scaffold): all sections are stubs. Tool agents fill these in.
 
 // === Video/GIF/Audio tools (Agent 1) ===
-// import './video/video-convert';
-// import './video/video-to-gif';
-// import './video/video-extract-frames';
-// import './video/video-trim';
-// import './video/video-compress';
-// import './video/video-screenshot';
-// import './video/video-speed';
-// import './video/video-reverse';
-// import './video/video-add-subtitle';
-// import './video/video-extract-audio';
-// import './gif/gif-make';
-// import './gif/gif-extract-frames';
-// import './gif/gif-optimize';
-// import './gif/gif-reverse';
-// import './gif/gif-speed';
-// import './gif/gif-crop';
-// import './audio/audio-convert';
-// import './audio/audio-trim';
-// import './audio/audio-merge';
-// import './audio/audio-normalize';
-// import './audio/audio-speed';
-// import './audio/audio-id3';
+import './video/video-convert'
+import './video/video-to-gif'
+import './video/video-extract-frames'
+import './video/video-trim'
+import './video/video-compress'
+import './video/video-screenshot'
+import './video/video-speed'
+import './video/video-reverse'
+import './video/video-add-subtitle'
+import './video/video-extract-audio'
+import './gif/gif-make'
+import './gif/gif-extract-frames'
+import './gif/gif-optimize'
+import './gif/gif-reverse'
+import './gif/gif-speed'
+import './gif/gif-crop'
+import './audio/audio-convert'
+import './audio/audio-trim'
+import './audio/audio-merge'
+import './audio/audio-normalize'
+import './audio/audio-speed'
+import './audio/audio-id3'
 
 // === Image/PDF tools (Agent 2) ===
 // import './image/image-convert';

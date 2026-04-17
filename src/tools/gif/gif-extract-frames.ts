@@ -38,7 +38,7 @@ const tool: Tool = {
     }
 
     const zipped = zipSync(zipFiles)
-    const blob = new Blob([zipped], { type: 'application/zip' })
+    const blob = new Blob([zipped.buffer as ArrayBuffer], { type: 'application/zip' })
 
     const baseName = file.name.replace(/\.[^.]+$/, '')
     return {
@@ -63,7 +63,7 @@ async function extractGifFrames(
   const frames: Uint8Array[] = []
 
   // Use a blob URL + multiple canvas renders via GIF frame splitter approach
-  const blob = new Blob([bytes], { type: 'image/gif' })
+  const blob = new Blob([bytes.buffer as ArrayBuffer], { type: 'image/gif' })
   const url = URL.createObjectURL(blob)
 
   try {
