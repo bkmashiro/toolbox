@@ -166,3 +166,11 @@ import './misc/font-test';
 import './misc/keyboard-tester';
 import './misc/screen-ruler';
 import './misc/countdown';
+
+// === Misc Tools Expansion ===
+import './misc/tts';
+import './misc/stt';
+import './misc/pomodoro';
+import './math/num-to-words';
+import './text/string-similarity';
+import './text/word-freq';
