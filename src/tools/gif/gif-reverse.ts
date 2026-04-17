@@ -32,7 +32,7 @@ const tool: Tool = {
 
     onProgress?.(90, 'Building output GIF...')
 
-    const blob = new Blob([output], { type: 'image/gif' })
+    const blob = new Blob([output.buffer as ArrayBuffer], { type: 'image/gif' })
     const baseName = file.name.replace(/\.[^.]+$/, '')
     return {
       type: 'file',
