@@ -166,3 +166,11 @@ import './misc/font-test';
 import './misc/keyboard-tester';
 import './misc/screen-ruler';
 import './misc/countdown';
+
+// === Archive & Spreadsheet Expansion ===
+import './data/zip-create';
+import './data/zip-extract';
+import './data/xlsx-to-json';
+import './data/xlsx-to-csv';
+import './data/json-to-xlsx';
+import './data/csv-to-xlsx';
