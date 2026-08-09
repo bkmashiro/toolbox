@@ -29,8 +29,8 @@ describe('getFFmpeg', () => {
     await getFFmpeg()
 
     expect(mocks.load).toHaveBeenCalledWith({
-      coreURL: 'blob:https://unpkg.com/@ffmpeg/core@0.12.10/dist/umd/ffmpeg-core.js',
-      wasmURL: 'blob:https://unpkg.com/@ffmpeg/core@0.12.10/dist/umd/ffmpeg-core.wasm',
+      coreURL: 'blob:https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm/ffmpeg-core.js',
+      wasmURL: 'blob:https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm/ffmpeg-core.wasm',
     })
     expect(mocks.toBlobURL).toHaveBeenCalledTimes(2)
   })

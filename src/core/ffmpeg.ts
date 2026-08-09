@@ -22,7 +22,9 @@ export async function getFFmpeg(
       onProgress?.(Math.round(progress * 100), `Processing... ${(time / 1_000_000).toFixed(1)}s`);
     });
 
-    const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.10/dist/umd';
+    // @ffmpeg/ffmpeg's bundled worker is an ES module, so Vite builds must
+    // load the matching ESM core. The single-threaded core has no worker file.
+    const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm';
     await ffmpeg.load({
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
       wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
