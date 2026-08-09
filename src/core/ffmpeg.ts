@@ -26,14 +26,19 @@ export async function getFFmpeg(
     await ffmpeg.load({
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
       wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-      workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript'),
     });
 
     instance = ffmpeg;
     return ffmpeg;
   })();
 
-  return loading;
+  try {
+    return await loading;
+  } catch (error) {
+    // Allow a later attempt after a transient CDN or network failure.
+    loading = null;
+    throw error;
+  }
 }
 
 /**
